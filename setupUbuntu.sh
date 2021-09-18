@@ -1,5 +1,6 @@
 # Update
 sudo apt-get update
+sudo apt install git
 
 # Install Z shell, Oh My z Shell + plugins
 sudo apt-get install zsh
