@@ -18,7 +18,7 @@ sudo apt-get install maven
 # Install Intellij and Pycharm
 sudo snap install intellij-idea-community --classic
 sudo snap install intellij-idea-ultimate --classic
-sudo snap install pycharm-idea-community --classic
+sudo snap install pycharm-community --classic
 
 # Install Guake
 sudo apt-get install guake
