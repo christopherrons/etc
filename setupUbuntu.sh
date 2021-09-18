@@ -1,7 +1,8 @@
-# Update
+# Update and Basics
 sudo apt-get update
 sudo apt install git
 sudo apt install curl wget git
+sudo apt install vim
 
 # Install Z shell, Oh My z Shell + plugins
 sudo apt-get install zsh
