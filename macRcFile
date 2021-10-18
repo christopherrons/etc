@@ -1,0 +1,11 @@
+# Alias
+alias ll="ls -l"
+
+# Java
+
+export JAVA_HOME=$(/usr/libexec/java_home -v "11")
+function jdk() {
+   export JAVA_HOME=$(/usr/libexec/java_home -v "$1")
+   export PATH="/usr/local/opt/openjdk@$1/bin:$PATH"
+   java -version
+}
