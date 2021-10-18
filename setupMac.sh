@@ -20,6 +20,9 @@ sudo ln -sfn /usr/local/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirt
 brew install openjdk@17
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
+# Communication
+brew install --cask microsoft-teams
+brew install --cask zoom
 
 # Install Misc
 brew install --cask spotify
