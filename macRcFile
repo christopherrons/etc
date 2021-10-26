@@ -1,11 +1,42 @@
 # Alias
-alias ll="ls -l"
+alias ll="ls -lah"
+
+# Mysql
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
+
+# Maven
+export PATH=/opt/apache-maven-3.6.3/bin:$PATH
+function mvnV() {
+   export PATH=/opt/apache-maven-"$1"/bin:$PATH
+   mvn -version
+}
 
 # Java
-
 export JAVA_HOME=$(/usr/libexec/java_home -v "11")
+export JAVA_8_HOME=$JAVA_HOME
+export JAVA_11_HOME=$JAVA_HOME
+export JAVA_17_HOME=$JAVA_HOME
 function jdk() {
    export JAVA_HOME=$(/usr/libexec/java_home -v "$1")
-   export PATH="/usr/local/opt/openjdk@$1/bin:$PATH"
+   export JAVA_8_HOME=$JAVA_HOME
+   export JAVA_11_HOME=$JAVA_HOME
+   export JAVA_17_HOME=$JAVA_HOME
+   #export PATH="/usr/local/opt/openjdk@$1/bin:$PATH"
    java -version
+}
+
+# Git
+
+unalias gcam 2</dev/null
+function gcam() {
+    PREFIX=""
+    if [[ $(git_current_branch) == *"EEX-"* ]] || [[ $(git_current_branch) == *"DBCG-"* ]] ;
+    then
+        IFS='/' read -rA BRANCH <<< $(git_current_branch)
+        PREFIX="${BRANCH[2]}: "
+   fi
+   git commit -v -a -m "${PREFIX}$1"
+
 }
